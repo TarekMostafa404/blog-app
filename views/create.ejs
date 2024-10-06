@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partial/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partial/header.ejs') %>
+    <div class="container mt-5">
+      <h1 class="text-center py-4">Create New Post</h1>
+
+      <form
+        action="/submit"
+        method="POST"
+        class="container mt-3 p-4 border rounded shadow-sm"
+        id="blog-form"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="content" class="form-label">Content</label>
+
+          <div id="editor" class="form-control" style="min-height: 200px"></div>
+        </div>
+
+        <!-- Hidden input to store the formatted content -->
+        <input type="hidden" id="richTextContent" name="richTextContent" />
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="/" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+
+    <footer><%- include('partial/footer.ejs') %></footer>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <script>
+      // Initialize Quill editor
+      var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Write your blog post here...',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ align: [] }],
+            [{ header: [1, 2, 3, 4, false] }],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ size: ['small', false, 'large', 'huge'] }],
+            [{ color: [] }, { background: [] }],
+            ['clean'],
+            // ['link', 'blockquote', 'code-block'],
+            // [{ script: 'sub' }, { script: 'super' }],
+            // [{ indent: '-1' }, { indent: '+1' }],
+            // [{ direction: 'rtl' }, { direction: 'ltr' }],
+          ],
+        },
+      });
+
+      // Handle form submission
+      document.getElementById('blog-form').onsubmit = function () {
+        // Get the HTML content from Quill editor
+        var content = quill.root.innerHTML;
+
+        // Set the content in the hidden input
+        document.getElementById('richTextContent').value = content;
+      };
+    </script>
+  </body>
+</html>

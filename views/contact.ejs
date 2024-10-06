@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partial/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partial/header.ejs') %>
+
+    <div class="container mt-5">
+      <h1 class="text-center py-4 h1">Contact Me</h1>
+
+      <p class="text-center">
+        If you have any questions, feedback, or just want to get in touch,
+        <br />
+        feel free to fill out the form below. and I’ll get back to you as soon
+        as possible!
+      </p>
+
+      <!-- Contact Form -->
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form action="/contact" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center">
+          <h3 class="h3">Other Ways to Reach Me</h3>
+          <p>Email: tarekmostafa.dev@gmail.com</p>
+          <p>Phone: +201143924392</p>
+        </div>
+      </div>
+    </div>
+
+    <footer><%- include('partial/footer.ejs') %></footer>
+  </body>
+</html>

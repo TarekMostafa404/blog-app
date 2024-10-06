@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partial/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partial/header.ejs') %>
+
+    <div class="container mt-5">
+      <h1 class="text-center py-4 h1">About My Blog</h1>
+
+      <!-- Blog Description -->
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="lead text-center">
+            Welcome to our blog! This platform is designed to share knowledge,
+            insights, and news about the latest trends in web development,
+            technology, and beyond. Whether you're a seasoned developer or just
+            starting out, we aim to provide valuable content that educates,
+            informs, and inspires.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Mission Section -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <h2 class="text-center h2">Our Mission</h2>
+          <p class="text-center">
+            Our mission is simple: to empower developers and tech enthusiasts
+            with the information they need to excel in their careers. Through
+            tutorials, industry updates, and personal stories, we hope to foster
+            a community of lifelong learners and innovators.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meet the Creator Section -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <h2 class="text-center h2">Meet the Developer</h2>
+          <div class="text-center">
+            <!-- <img
+              src="https://via.placeholder.com/150"
+              alt="Creator"
+              class="rounded-circle mb-3"
+            /> -->
+          </div>
+          <p class="text-center">
+            Hi, I'm Tarek Mostafa, a passionate web developer with a strong
+            background in sales, customer service, and retail. After spending
+            over 19 years in various industries, I decided to dive into web
+            development to combine my passion for technology with my experience.
+            This blog is my way of giving back to the community by sharing
+            knowledge and helping others in their learning journey.
+          </p>
+        </div>
+      </div>
+
+      <!-- Technologies Used Section -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <h2 class="text-center h2">Technologies We Use</h2>
+          <p class="text-center">
+            Our blog is built using the latest technologies to ensure a seamless
+            and modern experience for our users:
+          </p>
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">
+              Node.js & Express.js - Server-side framework
+            </li>
+            <li class="list-group-item">
+              EJS - Templating engine for dynamic content
+            </li>
+            <li class="list-group-item">
+              PostgreSQL - Database for managing blog posts
+            </li>
+            <li class="list-group-item">
+              Bootstrap (or Tailwind CSS) - Responsive design and styling
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Link Back to Home Page -->
+      <div class="text-center mt-5">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+
+    <footer><%- include('partial/footer.ejs') %></footer>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

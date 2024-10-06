@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partial/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partial/header.ejs') %>
+
+    <div class="container mt-5">
+      <h1 class="text-center h1 py-4">All Blog Posts</h1>
+
+      <!-- Loop through all the blog posts and display full details -->
+      <% posts.forEach(post => { %>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h2"><%= post.title %></h2>
+          <p class="card-text"><%- post.content %></p>
+
+          <div class="d-flex justify-content-between align-items-center py-3">
+            <!-- Date -->
+            <p class="text-muted mb-0">
+              Published on <%= new Date(post.date_created).toLocaleDateString()
+              %>
+            </p>
+
+            <!-- Update Button -->
+            <a
+              href="/posts/update/<%= post.id %>"
+              role="submit"
+              class="btn btn-outline-success"
+            >
+              Update
+            </a>
+
+            <!-- Delete Button -->
+            <a
+              href="/posts/delete/<%= post.id %>"
+              class="btn btn-outline-danger"
+            >
+              Delete
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+
+      <!-- Link to create a new blog post -->
+      <div class="text-center mt-4 mb-3">
+        <a href="/posts/new" class="btn btn-success">Create New Post</a>
+        <!-- <a href="/posts/new" class="btn btn-success">Create New Post</a> -->
+      </div>
+    </div>
+
+    <footer><%- include('partial/footer.ejs') %></footer>
+  </body>
+</html>
